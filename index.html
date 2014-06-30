@@ -6,6 +6,15 @@
 
   <title>My Homepage</title>
   <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" media="all" />
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/jquery.googleSuggest.js"></script>
+  
+
+
+  
   <meta name="description" content="Home">
 
 </head>
@@ -17,7 +26,9 @@
 
         
         <div class="youtube-search-box">
-            <input class="youtube-search-input">
+            <form id="youtube-form" method="get" action="http://www.youtube.com/results"> 
+                <input class="youtube-search-input" type="text" name="q" size="31" maxlength="255" value="" /> 
+            </form>
         </div>
 
         <div class="youtube-sub-box">
@@ -35,8 +46,11 @@
             </div>
 
             <div class="google-search-box">
-                <input class="google-search-input">
-                    
+                
+                 <form id="google-form" method="get" action="http://www.google.com/search"> 
+                     <input class="google-search-input" type="text" name="q" size="31" maxlength="255" value="" /> 
+                 </form>
+                
             </div>
 
             <div class="note-box">
