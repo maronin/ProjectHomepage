@@ -14,6 +14,20 @@ $.fn.googleSuggest = function(opts){
     recipes: { client: 'psy', ds: 'r' }
   }, service = services[opts.service];
 
+  opts.select = function(event, ui) {
+    $(event.target).val(ui.item.label);
+    console.log( $(event.target).parent().attr('id'));
+    
+    if($(event.target).parent().attr('id') === "google-form"){
+         $('#google-form').submit();
+    }
+    else if($(event.target).parent().attr('id') === "youtube-form"){
+        $('#youtube-form').submit();
+    }
+    
+    return false;
+  }
+
   opts.source = function(request, response){
     $.ajax({
       url: 'http'+(opts.secure?'s':'')+'://clients1.google.com/complete/search',
